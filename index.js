@@ -6,8 +6,8 @@ var index = 'node-test';
 var type = '_doc';
 var id = '1';
 var json = {
-  "title": "Moneyball",
-  "director": "Bennett Miller",
+  "title": "Dark Souls",
+  "director": "Miyazaki",
   "year": "2011"
 }
 
@@ -22,8 +22,6 @@ function indexDocument(document) {
   request.body = JSON.stringify(document);
   request.headers['host'] = domain;
   request.headers['Content-Type'] = 'application/json';
-  // Content-Length is only needed for DELETE requests that include a request
-  // body, but including it for all requests doesn't seem to hurt anything.
   request.headers["Content-Length"] = request.body.length;
 
   var credentials = new AWS.EnvironmentCredentials('AWS');
